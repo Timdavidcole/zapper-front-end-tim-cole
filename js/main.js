@@ -40,5 +40,3 @@ function genTableBody(table, tableBody) {
 let membersTable = document.getElementById("members-table-main");
 genTableHead(membersTable, tableHeaders);
 genTableBody(membersTable, exampleTeamMembers);
-
-export default subtract
