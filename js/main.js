@@ -1,9 +1,14 @@
-const exampleTeamMembers = [
-  {
-    firstName: "Erica",
-    lastName: "Badu",
-    email: "e.badu@example.com",
-    perms: "owner",
-    profilePicUrl: "erica-badu-profile-icon.png"
-  }
-];
+function genTableHead(table, tableHeads) {
+  const thead = table.createTHead();
+  const row = thead.insertRow();
+
+  tableHeads.forEach(header => {
+    const th = document.createElement("th");
+    const text = document.createTextNode(header);
+    th.appendChild(text);
+    row.appendChild(th);
+  });
+}
+
+let membersTable = document.getElementById("members-table-main");
+genTableHead(membersTable, tableHeaders);

@@ -1,3 +1,5 @@
+const tableHeaders = ["Team Members", "Email", "Permission level"];
+
 const exampleTeamMembers = [
   {
     firstName: "Erica",
