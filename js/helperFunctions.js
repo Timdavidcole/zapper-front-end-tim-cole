@@ -3,3 +3,10 @@ const isAcceptedName = member => {
     ? `${member["firstName"]} ${member["lastName"]}`
     : "Pending acceptance";
 };
+
+const isAcceptedProfilePic = member => {
+    return member.accepted
+      ? member.profilePicUrl
+      : "placeholder-profile-icon.png";
+  };
+  

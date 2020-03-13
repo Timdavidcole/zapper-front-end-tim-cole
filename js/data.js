@@ -5,7 +5,7 @@ const exampleTeamMembers = [
     firstName: "Erica",
     lastName: "Badu",
     email: "e.badu@example.com",
-    perms: "owner",
+    perms: "Owner",
     profilePicUrl: "erica-profile-icon.png",
     accepted: true
   },
@@ -13,7 +13,7 @@ const exampleTeamMembers = [
     firstName: "Pat",
     lastName: "Nelsson",
     email: "p.nelsson@example.com",
-    perms: "admin",
+    perms: "Admin",
     profilePicUrl: "p-profile-icon.png",
     accepted: true
   },
@@ -21,7 +21,7 @@ const exampleTeamMembers = [
     firstName: "",
     lastName: "",
     email: "j.dog@example.com",
-    perms: "standard",
+    perms: "Standard",
     profilePicUrl: "",
     accepted: false
   },
@@ -29,7 +29,7 @@ const exampleTeamMembers = [
     firstName: "Amy",
     lastName: "Namy",
     email: "a.namy@example.com",
-    perms: "standard",
+    perms: "Standard",
     profilePicUrl: "amy-profile-icon.png",
     accepted: true
   },
@@ -37,7 +37,7 @@ const exampleTeamMembers = [
     firstName: "Victor",
     lastName: "D.",
     email: "v.d@example.com",
-    perms: "standard",
+    perms: "Standard",
     profilePicUrl: "v-profile-icon.png",
     accepted: true
   },
@@ -45,7 +45,7 @@ const exampleTeamMembers = [
     firstName: "Olly",
     lastName: "",
     email: "o.hunter@example.com",
-    perms: "standard",
+    perms: "Standard",
     profilePicUrl: "olly-profile-icon.png",
     accepted: true
   }

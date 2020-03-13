@@ -11,8 +11,9 @@ function genTableHead(table, tableHeads) {
 }
 
 function genTableBody(table, tableBody) {
-  tableBody.forEach(member => {
-    const row = table.insertRow();
+  const tBody = table.createTBody();
+  tableBody.forEach((member, index) => {
+    const row = tBody.insertRow();
     Object.keys(member).forEach(key => {
       let cell, text;
       switch (key) {
@@ -20,21 +21,39 @@ function genTableBody(table, tableBody) {
           cell = row.insertCell();
           text = document.createTextNode(isAcceptedName(member));
           cell.appendChild(text);
+          cell.setAttribute("id", `memberName${index}`);
+          addProfilePic(member, cell);
           break;
         case "email":
           cell = row.insertCell();
           text = document.createTextNode(member[key]);
           cell.appendChild(text);
+          cell.setAttribute("id", `memberEmail${index}`);
           break;
         case "perms":
           cell = row.insertCell();
           text = document.createTextNode(member[key]);
           cell.appendChild(text);
+          cell.setAttribute("id", `memberPerms${index}`);
         default:
           break;
       }
     });
   });
+}
+
+function addProfilePic(member, cell) {
+  const profilePic = document.createElement("i");
+  profilePic.setAttribute(
+    "style",
+    `background-image: url('./img/${isAcceptedProfilePic(
+      member
+    )}')`
+  );
+  profilePic.setAttribute(
+    "class",'profile-pic'
+  );
+  cell.insertBefore(profilePic, cell.childNodes[0]);
 }
 
 let membersTable = document.getElementById("members-table-main");
