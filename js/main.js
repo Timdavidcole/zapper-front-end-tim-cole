@@ -37,7 +37,7 @@ function genTableBody(table, tableBody) {
   });
 }
 
-function isAcceptedName(member) {
+const isAcceptedName = (member) => {
   return member.accepted
     ? `${member["firstName"]} ${member["lastName"]}`
     : "Pending acceptance";
@@ -46,3 +46,5 @@ function isAcceptedName(member) {
 let membersTable = document.getElementById("members-table-main");
 genTableHead(membersTable, tableHeaders);
 genTableBody(membersTable, exampleTeamMembers);
+
+export default subtract
