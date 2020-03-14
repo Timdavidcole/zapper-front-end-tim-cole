@@ -46,6 +46,7 @@ function genTableRow(row, member, index) {
         text = document.createTextNode(member[key]);
         cell.appendChild(text);
         cell.setAttribute("id", `memberPerms${index}`);
+        cell.setAttribute("class", `member-perms-cell`);
         addDeleteButton(cell, row, index);
       default:
         break;
@@ -79,7 +80,7 @@ function addDeleteButton(cell, row, index) {
 
 function deleteMember(index) {
   teamMembers.splice(index, 1);
-  const row = document.getElementById(`memberRow${index}`)
+  const row = document.getElementById(`memberRow${index}`);
   row.parentNode.removeChild(row);
 }
 

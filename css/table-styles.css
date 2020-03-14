@@ -15,8 +15,10 @@
     position: relative;
     height: 20.5px;
     width: 20.5px;
+    top: 3.5px;
     border: none;
     outline: none;
+    visibility: hidden;
 }
 
 .delete-button-icon {
@@ -31,3 +33,11 @@
     background-repeat: no-repeat;
     background-size: contain;
 }
+
+.member-row:hover {
+    background-color: #F2F8FF;
+}
+
+.member-row:hover .member-perms-cell button {
+    visibility: visible;
+} 
