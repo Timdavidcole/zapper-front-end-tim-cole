@@ -6,6 +6,8 @@ Nice little tech test I did for a Zappar application.  Pretty happy with it as I
 
 Only thing I might change is to create some proper custom components for the major elements, although this might be overkill for a project this small.
 
+I could also have used a CSS pre-processor, but again, might be a little overkill for a project this size.
+
 ## Tech Stack
 
 * HTML5 Boilerplate (bare bones project template)
