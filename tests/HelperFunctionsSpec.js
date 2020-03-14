@@ -53,3 +53,19 @@ describe("isAcceptedProfilePic()", () => {
     expect(isAcceptedProfilePic(members[1])).toBe("amy-profile-icon.png");
   });
 });
+
+describe("generateRandomMember()", () => {
+  const cCat = {
+    firstName: "",
+    lastName: "",
+    email: "c.cat@example.com",
+    perms: "Standard",
+    profilePicUrl: "",
+    accepted: false
+  };
+  it("should return a Mr c.cat", () => {
+    spyOn(Math, "random").and.returnValue(0.1);
+    const randomPerson = generateRandomMember()
+    expect(randomPerson.email).toBe(cCat.email);
+  });
+});
