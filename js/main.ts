@@ -99,6 +99,7 @@ function changeActiveMembers() {
 
 function changeTotalMembers() {
   const totalMembersCount = document.getElementById("active-members") as HTMLElement
+  console.log(teamMembersState.length)
   totalMembersCount.innerHTML = `${teamMembersState.length}`;
 }
 
@@ -116,14 +117,14 @@ function addRandomMember() {
 }
 
 function generateNewBody() {
-  var table = document.getElementById("members-table-main");
+  var table = document.getElementById("members-table-main") as HTMLTableElement;
   table.removeChild(table.childNodes[2]);
   genTableBody(membersTable, teamMembersState);
   changeActiveMembers();
   changeTotalMembers();
 }
 
-let membersTable = document.getElementById("members-table-main");
+let membersTable = document.getElementById("members-table-main") as HTMLTableElement;
 
 genTableHead(membersTable, tableHeaders);
 genTableBody(membersTable, teamMembersState);

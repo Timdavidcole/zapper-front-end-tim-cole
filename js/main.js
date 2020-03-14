@@ -87,6 +87,7 @@ function changeActiveMembers() {
 }
 function changeTotalMembers() {
     const totalMembersCount = document.getElementById("active-members");
+    console.log(teamMembersState.length);
     totalMembersCount.innerHTML = `${teamMembersState.length}`;
 }
 function countActiveMembers() {
