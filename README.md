@@ -8,11 +8,11 @@ Only thing I might change is to create some proper custom components for the ele
 
 ## Tech Stack
 
-HTML5 Boilerplate (bare bones project template)
-Javascript (ES6)
-Typescript
-Jasmine (unit tests)
-Cypress (feature tests)
+* HTML5 Boilerplate (bare bones project template)
+* Javascript (ES6)
+* Typescript
+* Jasmine (unit tests)
+* Cypress (feature tests)
 
 ## Usage
 
