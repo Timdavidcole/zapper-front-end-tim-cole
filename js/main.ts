@@ -82,7 +82,7 @@ function addDeleteButton(cell: HTMLTableCellElement, index: number) {
 function deleteMember(index: number) {
   const row: HTMLTableRowElement = document.getElementById(`memberRow${index}`) as HTMLTableRowElement;
   Array.from(row.children).forEach((cell) => {
-    cell.setAttribute("style", "opacity: 0");
+    cell.setAttribute("style", "opacity: 0; background-color: white! important");
   });
   setTimeout(() => {
     teamMembersState.splice(index, 1);
@@ -98,7 +98,7 @@ function changeActiveMembers() {
 }
 
 function changeTotalMembers() {
-  const totalMembersCount = document.getElementById("active-members") as HTMLElement
+  const totalMembersCount = document.getElementById("total-members") as HTMLElement
   console.log(teamMembersState.length)
   totalMembersCount.innerHTML = `${teamMembersState.length}`;
 }
@@ -108,6 +108,7 @@ function countActiveMembers() {
   teamMembersState.forEach((member: Member) => {
     member.accepted ? activeMembers++ : null;
   });
+  console.log(activeMembers)
   return `${activeMembers}`;
 }
 

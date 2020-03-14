@@ -72,7 +72,7 @@ function addDeleteButton(cell, index) {
 function deleteMember(index) {
     const row = document.getElementById(`memberRow${index}`);
     Array.from(row.children).forEach((cell) => {
-        cell.setAttribute("style", "opacity: 0");
+        cell.setAttribute("style", "opacity: 0; background-color: white! important");
     });
     setTimeout(() => {
         teamMembersState.splice(index, 1);
@@ -86,7 +86,7 @@ function changeActiveMembers() {
     activeMembersCount.innerHTML = countActiveMembers();
 }
 function changeTotalMembers() {
-    const totalMembersCount = document.getElementById("active-members");
+    const totalMembersCount = document.getElementById("total-members");
     console.log(teamMembersState.length);
     totalMembersCount.innerHTML = `${teamMembersState.length}`;
 }
@@ -95,6 +95,7 @@ function countActiveMembers() {
     teamMembersState.forEach((member) => {
         member.accepted ? activeMembers++ : null;
     });
+    console.log(activeMembers);
     return `${activeMembers}`;
 }
 function addRandomMember() {

@@ -1,20 +1,3 @@
-@import url('https://fonts.googleapis.com/css?family=Lato');
-
-
-body {
-    font-family: 'Lato';
-    color: #344B60
-}
-
-h1 {
-    display: inline-block;
-    font-style: normal;
-    font-weight: 200;
-    font-size: 28px;
-    margin: 0;
-    vertical-align: top;
-}
-
 .table-header-row th {
     padding: 20px;
     text-align: left;
@@ -23,13 +6,6 @@ h1 {
     font-weight: bold;
     line-height: 20px;
     padding-left: 10px;
-}
-
-.main-container {
-    box-sizing: border-box;
-    background-color: #FBFBFB;
-    width: 100vw;
-    padding: 60px;
 }
 
 tbody {
@@ -53,12 +29,20 @@ tbody {
     padding: 20px;
     padding-left: 10px;
     opacity: 1;
-    transition: opacity 0.6s linear;
+    transition: opacity 0.6s linear, background-color 0.6s linear;
+}
+
+.member-row:hover {
+    background-color: #F2F8FF;
+}
+
+.member-row:hover .member-perms-cell button {
+    visibility: visible;
 }
 
 .member-name-cell {
     width: 25%;
-    padding-bottom: 15px! important;
+    padding-bottom: 15px ! important;
 }
 
 .member-email-cell {
@@ -67,49 +51,6 @@ tbody {
 
 .member-perms-cell {
     width: 50%
-}
-
-.members-add-container {
-    padding: 0px;
-    padding-left: 0px;
-    margin-top: 2 0px
-}
-
-.members-active {
-    color: #9B9B9B;
-    font-size: 14px;
-    padding: 20px;
-}
-
-.add-member-button {
-    position: relative;
-    bottom: 5px;
-    background-color: #CF361E;
-    outline: none;
-    border: none;
-    border-radius: 100%;
-    height: 40px;
-    width: 40px;
-    color: white;
-    font-size: 28px;
-    padding-bottom: 5px;
-    display: inline-block;
-    margin-left: 15px;
-    vertical-align: top;
-    box-shadow: none;
-    transform: scale(1, 1);
-    transition: transform 0.2s, box-shadow 0.2s
-}
-
-.add-member-button:hover {
-    box-shadow: 0px 1px 5px 0px rgb(106, 106, 106);
-    transform: scale(1.1, 1.1);
-}
-
-.add-member-button:active {
-    background-color: rgb(165, 58, 42);
-    box-shadow: 0px 0.5px 5px 0px rgb(0, 0, 0);
-    transform: scale(0.95, 0.95);
 }
 
 .profile-pic-container {
@@ -164,44 +105,4 @@ tbody {
 
 .delete-button-icon:active {
     transform: scale(0.95, 0.95);
-}
-
-.invite-button {
-    background-color: transparent;
-    border-radius: 20%;
-    margin-left: 10px;
-    border: none;
-    outline: none;
-    font-size: 14px;
-    font-weight: bold;
-    color: #344B60;
-    transform: scale(1, 1);
-    transition: transform 0.2s
-}
-
-.invite-icon {
-    padding-right: 5px;
-    top: -2px;
-    position: relative;
-}
-
-.invite-button:hover {
-    transform: scale(1.1, 1.1);
-}
-
-.invite-button:active {
-    background-color: #F2F8FF;
-    transform: scale(0.95, 0.95);
-}
-
-.member-row {
-    transition: background-color 0.3s
-}
-
-.member-row:hover {
-    background-color: #F2F8FF;
-}
-
-.member-row:hover .member-perms-cell button {
-    visibility: visible;
 }
