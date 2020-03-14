@@ -4,7 +4,7 @@
 
 Nice little tech test I did for a Zappar application.  Pretty happy with it as I don't usually use vanilla Javascript these days, and I've never used Typescript.  Typescript is fantastic for debugging and getting your thoughts ordered as you code. Will definitely use more in the future.
 
-Only thing I might change is to create some proper custom components for the elements, although this might be overkill for a project this small.
+Only thing I might change is to create some proper custom components for the major elements, although this might be overkill for a project this small.
 
 ## Tech Stack
 
