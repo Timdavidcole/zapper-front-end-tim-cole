@@ -12,7 +12,8 @@ body {
     box-sizing: border-box;
     background-color: #FBFBFB;
     width: 100vw;
-    padding: 60px;
+    height: 100vh;
+    padding: 150px;
 }
 
 h1 {
