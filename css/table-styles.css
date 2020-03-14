@@ -33,6 +33,7 @@ tbody {
 .table-container {
     background-color: white;
     box-shadow: 0px 1px 5px 0px rgba(230, 230, 230, 1);
+    border-radius: 1%;
 }
 
 .members-table {
@@ -61,7 +62,8 @@ tbody {
 
 .members-add-container {
     padding: 0px;
-    padding-left: 0px
+    padding-left: 0px;
+    margin-top: 2   0px
 }
 
 .members-active {

@@ -15,12 +15,14 @@ function genTableHead(table, tableHeads) {
 
 function genTableBody(table, tableBody) {
   const tBody = table.createTBody();
-  tBody.setAttribute("id", `membersTable`);
+  tBody.setAttribute("id", "members-table");
 
   tableBody.forEach((member, index) => {
     const row = tBody.insertRow();
     genTableRow(row, member, index);
   });
+  var table = document.getElementById("members-table-main");
+  console.log(table.childNodes);
 }
 
 function genTableRow(row, member, index) {
@@ -83,8 +85,34 @@ function deleteMember(index) {
   teamMembers.splice(index, 1);
   const row = document.getElementById(`memberRow${index}`);
   row.parentNode.removeChild(row);
+  var table = document.getElementById("members-table-main");
+  table.removeChild(table.childNodes[2]);
+  genTableBody(membersTable, teamMembers);
+  changeActiveMembers();
+  changeTotalMembers();
+}
+
+function changeActiveMembers() {
+  document.getElementById("active-members").innerHTML = countActiveMembers();
+}
+
+function changeTotalMembers() {
+  document.getElementById("total-members").innerHTML = teamMembers.length;
+}
+
+function countActiveMembers() {
+  let activeMembers = 0;
+  teamMembers.forEach(member => {
+    member.accepted ? activeMembers++ : null;
+  });
+  return activeMembers;
 }
 
 let membersTable = document.getElementById("members-table-main");
+
 genTableHead(membersTable, tableHeaders);
-genTableBody(membersTable, teamMembers);
+  genTableBody(membersTable, teamMembers);
+  changeActiveMembers();
+  changeTotalMembers();
+
+genTable();
