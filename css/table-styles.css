@@ -19,11 +19,13 @@ h1 {
     font-size: 16px;
     font-weight: bold;
     line-height: 20px;
+    padding-left: 10px;
 }
 
 .main-container {
     background-color: #FBFBFB;
-    width: 100vw;
+    width: 90vw;
+    padding: 60px;
 }
 
 tbody {
@@ -63,7 +65,7 @@ tbody {
 .members-add-container {
     padding: 0px;
     padding-left: 0px;
-    margin-top: 2   0px
+    margin-top: 2 0px
 }
 
 .members-active {
@@ -87,6 +89,20 @@ tbody {
     display: inline-block;
     margin-left: 15px;
     vertical-align: top;
+    box-shadow: none;
+    transform: scale(1, 1);
+    transition: transform 0.2s, box-shadow 0.2s
+}
+
+.add-member-button:hover {
+    box-shadow: 0px 1px 5px 0px rgb(106, 106, 106);
+    transform: scale(1.1, 1.1);
+}
+
+.add-member-button:active {
+    background-color: rgb(165, 58, 42);
+    box-shadow: 0px 0.5px 5px 0px rgb(0, 0, 0);
+    transform: scale(0.95, 0.95);
 }
 
 .profile-pic-container {
@@ -130,6 +146,45 @@ tbody {
     background-position: center;
     background-repeat: no-repeat;
     background-size: contain;
+    transform: scale(1, 1);
+    transition: transform 0.2s;
+    border-radius: 20%
+}
+
+.delete-button-icon:hover {
+    transform: scale(1.2, 1.2);
+}
+
+.delete-button-icon:active {
+    transform: scale(0.95, 0.95);
+}
+
+.invite-button {
+    background-color: transparent;
+    border-radius: 20%;
+    margin-left: 10px;
+    border: none;
+    outline: none;
+    font-size: 14px;
+    font-weight: bold;
+    color: #344B60;
+    transform: scale(1, 1);
+    transition: transform 0.2s
+}
+
+.invite-icon {
+    padding-right: 5px;
+    top: -2px;
+    position: relative;
+}
+
+.invite-button:hover {
+    transform: scale(1.1, 1.1);
+}
+
+.invite-button:active {
+    background-color: #F2F8FF;
+    transform: scale(0.95, 0.95);
 }
 
 .member-row:hover {

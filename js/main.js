@@ -111,8 +111,6 @@ function countActiveMembers() {
 let membersTable = document.getElementById("members-table-main");
 
 genTableHead(membersTable, tableHeaders);
-  genTableBody(membersTable, teamMembers);
-  changeActiveMembers();
-  changeTotalMembers();
-
-genTable();
+genTableBody(membersTable, teamMembers);
+changeActiveMembers();
+changeTotalMembers();
