@@ -1,4 +1,4 @@
-let teamMembers = [...exampleTeamMembers];
+let teamMembersState = [...exampleTeamMembers];
 
 function genTableHead(table, tableHeads) {
   const thead = table.createTHead();
@@ -82,14 +82,19 @@ function addDeleteButton(cell, row, index) {
 }
 
 function deleteMember(index) {
-  teamMembers.splice(index, 1);
   const row = document.getElementById(`memberRow${index}`);
-  row.parentNode.removeChild(row);
-  var table = document.getElementById("members-table-main");
-  table.removeChild(table.childNodes[2]);
-  genTableBody(membersTable, teamMembers);
-  changeActiveMembers();
-  changeTotalMembers();
+  row.childNodes.forEach(node => {
+    node.setAttribute("style", "opacity: 0");
+  });
+  setTimeout(() => {
+    teamMembersState.splice(index, 1);
+    row.parentNode.removeChild(row);
+    var table = document.getElementById("members-table-main");
+    table.removeChild(table.childNodes[2]);
+    genTableBody(membersTable, teamMembersState);
+    changeActiveMembers();
+    changeTotalMembers();
+  }, 600);
 }
 
 function changeActiveMembers() {
@@ -97,12 +102,12 @@ function changeActiveMembers() {
 }
 
 function changeTotalMembers() {
-  document.getElementById("total-members").innerHTML = teamMembers.length;
+  document.getElementById("total-members").innerHTML = teamMembersState.length;
 }
 
 function countActiveMembers() {
   let activeMembers = 0;
-  teamMembers.forEach(member => {
+  teamMembersState.forEach(member => {
     member.accepted ? activeMembers++ : null;
   });
   return activeMembers;
@@ -111,6 +116,6 @@ function countActiveMembers() {
 let membersTable = document.getElementById("members-table-main");
 
 genTableHead(membersTable, tableHeaders);
-genTableBody(membersTable, teamMembers);
+genTableBody(membersTable, teamMembersState);
 changeActiveMembers();
 changeTotalMembers();
