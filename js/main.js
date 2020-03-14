@@ -3,25 +3,27 @@ let teamMembersState = [...exampleTeamMembers];
 function genTableHead(table, tableHeaders) {
     const thead = table.createTHead();
     const row = thead.insertRow();
-    row.setAttribute("class", "table-header-row");
-    tableHeaders.forEach(header => {
+    row.className = "table-header-row";
+    tableHeaders.forEach((header, index) => {
+        let widthStyle = ['25%', '25%', '50%'];
         const th = document.createElement("th");
         const text = document.createTextNode(header);
         th.appendChild(text);
+        th.setAttribute("style", `width: ${widthStyle[index]}`);
         row.appendChild(th);
     });
 }
 function genTableBody(table, teamMembers) {
     const tBody = table.createTBody();
-    tBody.setAttribute("id", "members-table");
+    tBody.id = "members-table";
     teamMembers.forEach((member, index) => {
         const row = tBody.insertRow();
         genTableRow(row, member, index);
     });
 }
 function genTableRow(row, member, index) {
-    row.setAttribute("class", `member-row`);
-    row.setAttribute("id", `memberRow${index}`);
+    row.className = `member-row`;
+    row.id = `memberRow${index}`;
     Object.keys(member).forEach(key => {
         let cell, text;
         switch (key) {
@@ -29,23 +31,23 @@ function genTableRow(row, member, index) {
                 cell = row.insertCell();
                 text = document.createTextNode(isAcceptedName(member));
                 cell.appendChild(text);
-                cell.setAttribute("id", `memberName${index}`);
-                cell.setAttribute("class", "member-name-cell");
+                cell.id = `memberName${index}`;
+                cell.className = "member-name-cell";
                 addProfilePic(member, cell);
                 break;
             case "email":
                 cell = row.insertCell();
                 text = document.createTextNode(member[key]);
                 cell.appendChild(text);
-                cell.setAttribute("id", `memberEmail${index}`);
-                cell.setAttribute("class", "member-email-cell");
+                cell.id = `memberEmail${index}`;
+                cell.className = "member-email-cell";
                 break;
             case "perms":
                 cell = row.insertCell();
                 text = document.createTextNode(member[key]);
                 cell.appendChild(text);
-                cell.setAttribute("id", `memberPerms${index}`);
-                cell.setAttribute("class", `member-perms-cell`);
+                cell.id = `memberPerms${index}`;
+                cell.className = "member-perms-cell";
                 addDeleteButton(cell, index);
             default:
                 break;
@@ -54,18 +56,18 @@ function genTableRow(row, member, index) {
 }
 function addProfilePic(member, cell) {
     const profilePic = document.createElement("img");
-    profilePic.setAttribute("src", `./img/${isAcceptedProfilePic(member)}`);
-    profilePic.setAttribute("align", "middle");
-    profilePic.setAttribute("class", "profile-pic");
+    profilePic.src = `./img/${isAcceptedProfilePic(member)}`;
+    profilePic.align = "middle";
+    profilePic.className = "profile-pic";
     cell.insertBefore(profilePic, cell.childNodes[0]);
 }
 function addDeleteButton(cell, index) {
     const deleteButton = document.createElement("button");
-    deleteButton.setAttribute("class", "delete-button");
-    deleteButton.setAttribute("onclick", `deleteMember(${index})`);
+    deleteButton.className = "delete-button";
+    deleteButton.onclick = () => deleteMember(index);
     const deleteButtonIcon = document.createElement("i");
-    deleteButtonIcon.setAttribute("style", `background-image: url('./img/bin.png')`);
-    deleteButtonIcon.setAttribute("class", "delete-button-icon");
+    deleteButtonIcon.style.backgroundImage = "url('./img/bin.png')";
+    deleteButtonIcon.className = "delete-button-icon";
     deleteButton.appendChild(deleteButtonIcon);
     cell.appendChild(deleteButton);
 }
