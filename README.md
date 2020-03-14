@@ -18,7 +18,7 @@ Only thing I might change is to create some proper custom components for the ele
 
 ### Install
 ```
-git clone 
+git clone git@github.com:Timdavidcole/zapper-front-end-tim-cole.git
 cd zapper-front-end-tech-test
 npm install
 ```
