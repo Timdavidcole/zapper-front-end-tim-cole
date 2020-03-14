@@ -15,7 +15,8 @@
   "scripts": {
     "test": "cypress open",
     "tsc": "tsc",
-    "load": "tsc && open ./index.html"
+    "load": "tsc && open ./index.html",
+    "open": "open ./index.html"
   },
   "repository": {
     "type": "git",
