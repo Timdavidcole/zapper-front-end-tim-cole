@@ -3,6 +3,7 @@ let teamMembers = [...exampleTeamMembers];
 function genTableHead(table, tableHeads) {
   const thead = table.createTHead();
   const row = thead.insertRow();
+  row.setAttribute("class", "table-header-row");
 
   tableHeads.forEach(header => {
     const th = document.createElement("th");
@@ -33,6 +34,7 @@ function genTableRow(row, member, index) {
         text = document.createTextNode(isAcceptedName(member));
         cell.appendChild(text);
         cell.setAttribute("id", `memberName${index}`);
+        cell.setAttribute("class", "member-name-cell");
         addProfilePic(member, cell);
         break;
       case "email":
@@ -40,6 +42,7 @@ function genTableRow(row, member, index) {
         text = document.createTextNode(member[key]);
         cell.appendChild(text);
         cell.setAttribute("id", `memberEmail${index}`);
+        cell.setAttribute("class", "member-email-cell");
         break;
       case "perms":
         cell = row.insertCell();
@@ -55,11 +58,9 @@ function genTableRow(row, member, index) {
 }
 
 function addProfilePic(member, cell) {
-  const profilePic = document.createElement("i");
-  profilePic.setAttribute(
-    "style",
-    `background-image: url('./img/${isAcceptedProfilePic(member)}')`
-  );
+  const profilePic = document.createElement("img");
+  profilePic.setAttribute("src", `./img/${isAcceptedProfilePic(member)}`);
+  profilePic.setAttribute("align", "middle");
   profilePic.setAttribute("class", "profile-pic");
   cell.insertBefore(profilePic, cell.childNodes[0]);
 }

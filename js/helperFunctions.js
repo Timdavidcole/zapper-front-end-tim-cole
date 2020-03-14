@@ -5,8 +5,7 @@ const isAcceptedName = member => {
 };
 
 const isAcceptedProfilePic = member => {
-    return member.accepted
-      ? member.profilePicUrl
-      : "placeholder-profile-icon.png";
-  };
-  
+  return member.accepted
+    ? member.profilePicUrl
+    : "placeholder-profile-icon.png";
+};

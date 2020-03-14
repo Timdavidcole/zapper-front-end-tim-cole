@@ -1,12 +1,108 @@
+body {
+    font-family: 'Lato';
+    color: #344B60
+}
+
+h1 {
+    display: inline-block;
+    font-style: normal;
+    font-weight: 200;
+    font-size: 28px;
+    margin: 0;
+    vertical-align: top;
+}
+
+.table-header-row th {
+    padding: 20px;
+    text-align: left;
+    color: rgb(69, 69, 69);
+    font-size: 16px;
+    font-weight: bold;
+    line-height: 20px;
+}
+
+.main-container {
+    background-color: #FBFBFB;
+    width: 100vw;
+}
+
+tbody {
+    font-size: 0.8rem;
+}
+
+.table-container {
+    background-color: white;
+    box-shadow: 0px 1px 5px 0px rgba(230, 230, 230, 1);
+}
+
+.members-table {
+    width: 96%;
+    margin: 20px;
+    margin-bottom: 0;
+}
+
+.member-row td {
+    border-bottom: 2px solid rgba(209, 209, 209, 0.67);
+    padding: 20px;
+    padding-left: 10px;
+}
+
+.member-name-cell {
+    width: 25%
+}
+
+.member-email-cell {
+    width: 25%
+}
+
+.member-perms-cell {
+    width: 50%
+}
+
+.members-add-container {
+    padding: 0px;
+    padding-left: 0px
+}
+
+.members-active {
+    color: #9B9B9B;
+    font-size: 14px;
+    padding: 20px;
+}
+
+.add-member-button {
+    position: relative;
+    bottom: 5px;
+    background-color: #CF361E;
+    outline: none;
+    border: none;
+    border-radius: 100%;
+    height: 40px;
+    width: 40px;
+    color: white;
+    font-size: 28px;
+    padding-bottom: 5px;
+    display: inline-block;
+    margin-left: 15px;
+    vertical-align: top;
+}
+
+.profile-pic-container {
+    height: 30px;
+    width: 30px;
+    display: inline-block;
+    position: relative;
+}
+
 .profile-pic {
     background-color: transparent;
-    position: relative;
     display: inline-block;
-    height: 20px;
-    width: 20px;
+    height: 30px;
+    width: 30px;
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
+    margin-right: 20px;
 }
 
 .delete-button {
@@ -40,4 +136,4 @@
 
 .member-row:hover .member-perms-cell button {
     visibility: visible;
-} 
+}
