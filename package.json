@@ -1,0 +1,26 @@
+{
+  "name": "zapper-front-end-tim-cole",
+  "version": "1.0.0",
+  "description": "tech-test",
+  "main": "index.html",
+  "directories": {
+    "test": "tests"
+  },
+  "dependencies": {
+    "cypress": "^4.1.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "cypress open"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Timdavidcole/zapper-front-end-tim-cole.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Timdavidcole/zapper-front-end-tim-cole/issues"
+  },
+  "homepage": "https://github.com/Timdavidcole/zapper-front-end-tim-cole#readme"
+}
