@@ -18,14 +18,16 @@
 <body>
     <div class="main-container">
         <div class='members-add-container'>
-            <h1>Members</h1><button class='add-member-button' onclick='addRandomMember()'>+</button>
+            <h1>Members</h1>
+            <button class='add-member-button' onclick='addRandomMember()'>+</button>
         </div>
         <div id="table-container" class='table-container'>
             <table id='members-table-main' class="members-table">
             </table>
             <div class='members-active'>
                 Your team has <span id='active-members'></span>/<span id='total-members'></span> active members.
-                <button class="invite-button"><img class='invite-icon' src='./img/invite-icon.png'>INVITE</button>
+                <button class="invite-button" onclick='addRandomMember()'>
+                    <img class='invite-icon' src='./img/invite-icon.png'>INVITE</button>
             </div>
         </div>
     </div>

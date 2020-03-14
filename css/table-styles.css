@@ -189,6 +189,10 @@ tbody {
     transform: scale(0.95, 0.95);
 }
 
+.member-row {
+    transition: background-color 0.3s
+}
+
 .member-row:hover {
     background-color: #F2F8FF;
 }

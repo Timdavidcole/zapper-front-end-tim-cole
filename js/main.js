@@ -21,8 +21,6 @@ function genTableBody(table, tableBody) {
     const row = tBody.insertRow();
     genTableRow(row, member, index);
   });
-  var table = document.getElementById("members-table-main");
-  console.log(table.childNodes);
 }
 
 function genTableRow(row, member, index) {
@@ -89,11 +87,7 @@ function deleteMember(index) {
   setTimeout(() => {
     teamMembersState.splice(index, 1);
     row.parentNode.removeChild(row);
-    var table = document.getElementById("members-table-main");
-    table.removeChild(table.childNodes[2]);
-    genTableBody(membersTable, teamMembersState);
-    changeActiveMembers();
-    changeTotalMembers();
+    generateNewBody();
   }, 600);
 }
 
@@ -111,6 +105,21 @@ function countActiveMembers() {
     member.accepted ? activeMembers++ : null;
   });
   return activeMembers;
+}
+
+function addRandomMember() {
+  const membersTable = document.getElementById("members-table");
+  const row = membersTable.insertRow();
+  teamMembersState.push(generateRandomMember());
+  generateNewBody();
+}
+
+function generateNewBody() {
+  var table = document.getElementById("members-table-main");
+  table.removeChild(table.childNodes[2]);
+  genTableBody(membersTable, teamMembersState);
+  changeActiveMembers();
+  changeTotalMembers();
 }
 
 let membersTable = document.getElementById("members-table-main");
