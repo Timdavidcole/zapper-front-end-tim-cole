@@ -1,22 +1,23 @@
+const members = [
+  {
+    firstName: "",
+    lastName: "",
+    email: "j.dog@example.com",
+    perms: "standard",
+    profilePicUrl: "",
+    accepted: false
+  },
+  {
+    firstName: "Amy",
+    lastName: "Namy",
+    email: "a.namy@example.com",
+    perms: "standard",
+    profilePicUrl: "amy-profile-icon.png",
+    accepted: true
+  }
+];
+
 describe("isAcceptedName()", () => {
-  const members = [
-    {
-      firstName: "",
-      lastName: "",
-      email: "j.dog@example.com",
-      perms: "standard",
-      profilePicUrl: "",
-      accepted: false
-    },
-    {
-      firstName: "Amy",
-      lastName: "Namy",
-      email: "a.namy@example.com",
-      perms: "standard",
-      profilePicUrl: "amy-profile-icon.png",
-      accepted: true
-    }
-  ];
   it("should return Pending acceptance if unaccepted", () => {
     expect(isAcceptedName(members[0])).toBe("Pending acceptance");
   });
@@ -26,24 +27,6 @@ describe("isAcceptedName()", () => {
 });
 
 describe("isAcceptedProfilePic()", () => {
-  const members = [
-    {
-      firstName: "",
-      lastName: "",
-      email: "j.dog@example.com",
-      perms: "standard",
-      profilePicUrl: "",
-      accepted: false
-    },
-    {
-      firstName: "Amy",
-      lastName: "Namy",
-      email: "a.namy@example.com",
-      perms: "standard",
-      profilePicUrl: "amy-profile-icon.png",
-      accepted: true
-    }
-  ];
   it("should return Pending acceptance if unaccepted", () => {
     expect(isAcceptedProfilePic(members[0])).toBe(
       "placeholder-profile-icon.png"
@@ -65,7 +48,7 @@ describe("generateRandomMember()", () => {
   };
   it("should return a Mr c.cat", () => {
     spyOn(Math, "random").and.returnValue(0.1);
-    const randomPerson = generateRandomMember()
+    const randomPerson = generateRandomMember();
     expect(randomPerson.email).toBe(cCat.email);
   });
 });

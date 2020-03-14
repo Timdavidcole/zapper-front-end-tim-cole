@@ -17,8 +17,7 @@ const generateRandomMember = () => {
   };
   const generateRandomLetter = () => {
     var characters = "abcdefghijklmnopqrstuvwxyz";
-    return characters.charAt(
-        Math.floor(Math.random() * characters.length));
+    return characters.charAt(Math.floor(Math.random() * characters.length));
   };
 
   return {
