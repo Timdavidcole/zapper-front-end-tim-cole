@@ -87,7 +87,6 @@ function changeActiveMembers() {
 }
 function changeTotalMembers() {
     const totalMembersCount = document.getElementById("total-members");
-    console.log(teamMembersState.length);
     totalMembersCount.innerHTML = `${teamMembersState.length}`;
 }
 function countActiveMembers() {
@@ -95,7 +94,6 @@ function countActiveMembers() {
     teamMembersState.forEach((member) => {
         member.accepted ? activeMembers++ : null;
     });
-    console.log(activeMembers);
     return `${activeMembers}`;
 }
 function addRandomMember() {

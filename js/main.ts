@@ -99,7 +99,6 @@ function changeActiveMembers() {
 
 function changeTotalMembers() {
   const totalMembersCount = document.getElementById("total-members") as HTMLElement
-  console.log(teamMembersState.length)
   totalMembersCount.innerHTML = `${teamMembersState.length}`;
 }
 
@@ -108,7 +107,6 @@ function countActiveMembers() {
   teamMembersState.forEach((member: Member) => {
     member.accepted ? activeMembers++ : null;
   });
-  console.log(activeMembers)
   return `${activeMembers}`;
 }
 
