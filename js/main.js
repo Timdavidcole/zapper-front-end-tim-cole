@@ -1,4 +1,10 @@
 "use strict";
+// @ts-ignore
+var __importDefault = (this && this.__importDefault) || function (mod) {
+    return (mod && mod.__esModule) ? mod : { "default": mod };
+};
+Object.defineProperty(exports, "__esModule", { value: true });
+const memberRow_js_1 = __importDefault(require("./components/memberRow.js"));
 let teamMembersState = [...exampleTeamMembers];
 function genTableHead(table, tableHeaders) {
     const thead = table.createTHead();
@@ -17,43 +23,52 @@ function genTableBody(table, teamMembers) {
     const tBody = table.createTBody();
     tBody.id = "members-table";
     teamMembers.forEach((member, index) => {
-        const row = tBody.insertRow();
-        genTableRow(row, member, index);
+        const memberRow = new memberRow_js_1.default();
+        memberRow.test = "test";
+        tBody.appendChild(memberRow);
+        // const row = tBody.insertRow() as HTMLTableRowElement;
+        // genTableRow(row, member, index);
     });
 }
-function genTableRow(row, member, index) {
-    row.className = `member-row`;
-    row.id = `memberRow${index}`;
-    Object.keys(member).forEach(key => {
-        let cell, text;
-        switch (key) {
-            case "lastName":
-                cell = row.insertCell();
-                text = document.createTextNode(isAcceptedName(member));
-                cell.appendChild(text);
-                cell.id = `memberName${index}`;
-                cell.className = "member-name-cell";
-                addProfilePic(member, cell);
-                break;
-            case "email":
-                cell = row.insertCell();
-                text = document.createTextNode(member[key]);
-                cell.appendChild(text);
-                cell.id = `memberEmail${index}`;
-                cell.className = "member-email-cell";
-                break;
-            case "perms":
-                cell = row.insertCell();
-                text = document.createTextNode(member[key]);
-                cell.appendChild(text);
-                cell.id = `memberPerms${index}`;
-                cell.className = "member-perms-cell";
-                addDeleteButton(cell, index);
-            default:
-                break;
-        }
-    });
+function genMemberRow(member) {
+    const memberRow = document.createElement("member-row");
+    memberRow.filter = 'test';
+    memberRow.filter = 'test2';
+    return memberRow;
 }
+// function genTableRow(row: HTMLTableRowElement, member: Member, index: number) {
+//   row.className = 'member-row';
+//   row.id = `memberRow${index}`;
+//   Object.keys(member).forEach(key => {
+//     let cell, text;
+//     switch (key) {
+//       case "lastName":
+//         cell = row.insertCell();
+//         text = document.createTextNode(isAcceptedName(member));
+//         cell.appendChild(text);
+//         cell.id = `memberName${index}`;
+//         cell.className = "member-name-cell";
+//         addProfilePic(member, cell);
+//         break;
+//       case "email":
+//         cell = row.insertCell();
+//         text = document.createTextNode(member[key]);
+//         cell.appendChild(text);
+//         cell.id = `memberEmail${index}`;
+//         cell.className = "member-email-cell";
+//         break;
+//       case "perms":
+//         cell = row.insertCell();
+//         text = document.createTextNode(member[key]);
+//         cell.appendChild(text);
+//         cell.id = `memberPerms${index}`;
+//         cell.className = "member-perms-cell";
+//         addDeleteButton(cell, index);
+//       default:
+//         break;
+//     }
+//   });
+// }
 function addProfilePic(member, cell) {
     const profilePic = document.createElement("img");
     profilePic.src = `./img/${isAcceptedProfilePic(member)}`;
