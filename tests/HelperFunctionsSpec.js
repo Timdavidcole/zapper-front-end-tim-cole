@@ -27,12 +27,12 @@ describe("isAcceptedName()", () => {
 });
 
 describe("isAcceptedProfilePic()", () => {
-  it("should return Pending acceptance if unaccepted", () => {
+  it("should return placeholder icon if unaccepted", () => {
     expect(isAcceptedProfilePic(members[0])).toBe(
       "placeholder-profile-icon.png"
     );
   });
-  it("should return first and last name concatenated if accepted", () => {
+  it("should return the member's icon if accepted", () => {
     expect(isAcceptedProfilePic(members[1])).toBe("amy-profile-icon.png");
   });
 });
