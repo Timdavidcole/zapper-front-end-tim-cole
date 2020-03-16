@@ -25,6 +25,7 @@ npm install
 ### To run tests
 ```
 npm test (for feature tests)
+then click on featuretests.spec.js
 open SpecRunner.html (for unit tests)
 ```
 ### To view
