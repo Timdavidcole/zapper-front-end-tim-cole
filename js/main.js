@@ -1,5 +1,6 @@
 "use strict";
 let teamMembersState = [...exampleTeamMembers];
+let membersTable = document.getElementById("members-table-main");
 function genTableHead(table, tableHeaders) {
     const thead = table.createTHead();
     const row = thead.insertRow();
@@ -89,6 +90,10 @@ function changeTotalMembers() {
     const totalMembersCount = document.getElementById("total-members");
     totalMembersCount.innerHTML = `${teamMembersState.length}`;
 }
+function countMembers() {
+    changeActiveMembers();
+    changeTotalMembers();
+}
 function countActiveMembers() {
     let activeMembers = 0;
     teamMembersState.forEach((member) => {
@@ -104,11 +109,8 @@ function generateNewBody() {
     var table = document.getElementById("members-table-main");
     table.removeChild(table.childNodes[2]);
     genTableBody(membersTable, teamMembersState);
-    changeActiveMembers();
-    changeTotalMembers();
+    countMembers();
 }
-let membersTable = document.getElementById("members-table-main");
 genTableHead(membersTable, tableHeaders);
 genTableBody(membersTable, teamMembersState);
-changeActiveMembers();
-changeTotalMembers();
+countMembers();

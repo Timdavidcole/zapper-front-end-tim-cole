@@ -1,4 +1,5 @@
 let teamMembersState = [...exampleTeamMembers];
+let membersTable = document.getElementById("members-table-main") as HTMLTableElement;
 
 function genTableHead(table: HTMLTableElement, tableHeaders: Array<string>) {
   const thead = table.createTHead() as HTMLTableSectionElement;
@@ -102,6 +103,11 @@ function changeTotalMembers() {
   totalMembersCount.innerHTML = `${teamMembersState.length}`;
 }
 
+function countMembers() {
+  changeActiveMembers();
+  changeTotalMembers();
+}
+
 function countActiveMembers() {
   let activeMembers = 0;
   teamMembersState.forEach((member: Member) => {
@@ -119,13 +125,9 @@ function generateNewBody() {
   var table = document.getElementById("members-table-main") as HTMLTableElement;
   table.removeChild(table.childNodes[2]);
   genTableBody(membersTable, teamMembersState);
-  changeActiveMembers();
-  changeTotalMembers();
+  countMembers()
 }
-
-let membersTable = document.getElementById("members-table-main") as HTMLTableElement;
 
 genTableHead(membersTable, tableHeaders);
 genTableBody(membersTable, teamMembersState);
-changeActiveMembers();
-changeTotalMembers();
+countMembers()
